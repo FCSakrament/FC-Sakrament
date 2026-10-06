@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>FC SAKRAMENT</title>
 
 <style>
@@ -30,7 +31,7 @@ body {
 }
 
 .home-box {
-    background: rgba(255,255,255,0.88);
+    background: rgba(255,255,255,0.85);
     padding: 45px 60px;
     border-radius: 25px;
     box-shadow: 0 10px 35px rgba(0,0,0,0.15);
@@ -44,9 +45,10 @@ body {
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
+    justify-content: center;
 }
 
 button {
@@ -55,7 +57,7 @@ button {
     color: #111;
     font-size: 18px;
     font-weight: bold;
-    padding: 15px 30px;
+    padding: 15px 35px;
     border-radius: 12px;
     cursor: pointer;
     transition: 0.2s;
@@ -149,17 +151,11 @@ button:hover {
     margin-bottom: 25px;
 }
 
-.relation-list {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-}
-
 .relation {
-    padding: 15px;
-    margin: 8px 0;
-    background: #f5f5f5;
-    border-radius: 10px;
+    background: white;
+    padding: 18px 20px;
+    margin: 10px 0;
+    border-radius: 12px;
     font-weight: bold;
 }
 
@@ -176,10 +172,6 @@ button:hover {
         font-size: 38px;
     }
 
-    .buttons {
-        grid-template-columns: 1fr;
-    }
-
     button {
         width: 100%;
     }
@@ -189,10 +181,9 @@ button:hover {
 
 <body>
 
-<!-- ==================== STRONA GŁÓWNA ==================== -->
+<!-- STRONA GŁÓWNA -->
 
 <div id="home" class="home">
-
     <div class="home-box">
 
         <h1>FC SAKRAMENT</h1>
@@ -218,96 +209,63 @@ button:hover {
         </div>
 
     </div>
-
 </div>
 
 
-<!-- ==================== ZAWODNICY ==================== -->
+<!-- ZAWODNICY -->
 
 <div id="players" class="page">
 
     <div class="top">
         <h2>ZAWODNICY</h2>
-        <button class="back" onclick="showPage('home')">
-            WRÓĆ
-        </button>
+        <button class="back" onclick="showPage('home')">WRÓĆ</button>
     </div>
 
-
     <div class="category">
-
         <h3>BRAMKARZE</h3>
-
         <div class="player">#1 Dominik Rzymski</div>
         <div class="player">#15 Piotr Piłat</div>
-
     </div>
 
-
     <div class="category">
-
         <h3>OBROŃCY</h3>
-
         <div class="player">#3 Antek Jakubowski</div>
         <div class="player">#4 Dominik Czajka</div>
         <div class="player">#6 Wojciech Sucharzewski</div>
         <div class="player">#17 Oskar Pudlewski</div>
         <div class="player">#39 Aleks Kopciński</div>
-
     </div>
 
-
     <div class="category">
-
         <h3>POMOCNICY</h3>
-
         <div class="player">#20 Adrian Golba</div>
         <div class="player">#44 Łukasz Pchełka</div>
         <div class="player">#69 Adam Czajka</div>
-
     </div>
 
-
     <div class="category">
-
         <h3>NAPASTNICY</h3>
-
         <div class="player">#9 Krzysztof Pietrzycki</div>
         <div class="player">#25 Oliwier Szydzik</div>
         <div class="player">#27 Kryspin Derkowsi</div>
-
     </div>
 
 </div>
 
 
-<!-- ==================== MECZE ==================== -->
+<!-- MECZE -->
 
 <div id="matches" class="page">
 
     <div class="top">
-
         <h2>MECZE</h2>
-
-        <button class="back" onclick="showPage('home')">
-            WRÓĆ
-        </button>
-
+        <button class="back" onclick="showPage('home')">WRÓĆ</button>
     </div>
-
 
     <div class="match-tabs">
-
-        <button onclick="showMatches('sparingi')">
-            SPARINGI
-        </button>
-
-        <button onclick="showMatches('liga')">
-            LIGA
-        </button>
-
+        <button onclick="showMatches('sparingi')">SPARINGI</button>
+        <button onclick="showMatches('liga')">LIGA</button>
     </div>
-
 
     <!-- SPARINGI -->
 
@@ -355,135 +313,42 @@ button:hover {
 
     <div id="liga" style="display:none;">
 
-        <div class="match">
-            <span>KS GRUZY</span>
-            <span>3 - 10</span>
-        </div>
-
-        <div class="match">
-            <span>FC GRUDZIĄDZKIE BYKI</span>
-            <span>15 - 12</span>
-        </div>
-
-        <div class="match">
-            <span>KS FORZA</span>
-            <span>5 - 6</span>
-        </div>
-
-        <div class="match">
-            <span>POŁAMANI FC</span>
-            <span>10 - 8</span>
-        </div>
-
-        <div class="match">
-            <span>FC FENIKSY</span>
-            <span>2 - 7</span>
-        </div>
-
-        <div class="match">
-            <span>FC DAGESTAN</span>
-            <span>9 - 1</span>
-        </div>
-
-        <div class="match">
-            <span>FC SINGLE</span>
-            <span>4 - 7</span>
-        </div>
-
-        <div class="match">
-            <span>FC NIEDZIELNI WOJOWNICY</span>
-            <span>8 - 8</span>
-        </div>
-
-        <div class="match">
-            <span>OKS STRZEMYK</span>
-            <span>5 - 18</span>
-        </div>
-
-        <div class="match">
-            <span>FC GWIAZDY</span>
-            <span>12 - 10</span>
-        </div>
-
-        <div class="match">
-            <span>FC CARTEL</span>
-            <span>15 - 3</span>
-        </div>
-
-        <div class="match">
-            <span>FC SINGLE</span>
-            <span>4 - 14</span>
-        </div>
-
-        <div class="match">
-            <span>FC NIEDZIELNI WOJOWNICY</span>
-            <span>8 - 6</span>
-        </div>
-
-        <div class="match">
-            <span>OKS STRZEMYK</span>
-            <span>20 - 0 (walkower)</span>
-        </div>
-
-        <div class="match">
-            <span>KS GRUZY</span>
-            <span>20 - 0 (walkower)</span>
-        </div>
-
-        <div class="match">
-            <span>POŁAMANI FC</span>
-            <span>17 - 11</span>
-        </div>
-
-        <div class="match">
-            <span>KS FORZA</span>
-            <span>? - ?</span>
-        </div>
-
-        <div class="match">
-            <span>FC FENIKSY</span>
-            <span>11 - 4</span>
-        </div>
-
-        <div class="match">
-            <span>FC DAGESTAN</span>
-            <span>20 - 0 (walkower)</span>
-        </div>
-
-        <div class="match">
-            <span>FC CARTEL</span>
-            <span>? - ?</span>
-        </div>
-
-        <div class="match">
-            <span>FC GRUDZIĄDZKIE BYKI</span>
-            <span>? - ?</span>
-        </div>
-
-        <div class="match">
-            <span>FC GWIAZDY</span>
-            <span>? - ?</span>
-        </div>
+        <div class="match"><span>KS GRUZY</span><span>3 - 10</span></div>
+        <div class="match"><span>FC GRUDZIĄDZKIE BYKI</span><span>15 - 12</span></div>
+        <div class="match"><span>KS FORZA</span><span>5 - 6</span></div>
+        <div class="match"><span>POŁAMANI FC</span><span>10 - 8</span></div>
+        <div class="match"><span>FC FENIKSY</span><span>2 - 7</span></div>
+        <div class="match"><span>FC DAGESTAN</span><span>9 - 1</span></div>
+        <div class="match"><span>FC SINGLE</span><span>4 - 7</span></div>
+        <div class="match"><span>FC NIEDZIELNI WOJOWNICY</span><span>8 - 8</span></div>
+        <div class="match"><span>OKS STRZEMYK</span><span>5 - 18</span></div>
+        <div class="match"><span>FC GWIAZDY</span><span>12 - 10</span></div>
+        <div class="match"><span>FC CARTEL</span><span>15 - 3</span></div>
+        <div class="match"><span>FC SINGLE</span><span>4 - 14</span></div>
+        <div class="match"><span>FC NIEDZIELNI WOJOWNICY</span><span>8 - 6</span></div>
+        <div class="match"><span>OKS STRZEMYK</span><span>20 - 0 (walkower)</span></div>
+        <div class="match"><span>KS GRUZY</span><span>20 - 0 (walkower)</span></div>
+        <div class="match"><span>POŁAMANI FC</span><span>17 - 11</span></div>
+        <div class="match"><span>KS FORZA</span><span>? - ?</span></div>
+        <div class="match"><span>FC FENIKSY</span><span>11 - 4</span></div>
+        <div class="match"><span>FC DAGESTAN</span><span>20 - 0 (walkower)</span></div>
+        <div class="match"><span>FC CARTEL</span><span>? - ?</span></div>
+        <div class="match"><span>FC GRUDZIĄDZKIE BYKI</span><span>? - ?</span></div>
+        <div class="match"><span>FC GWIAZDY</span><span>? - ?</span></div>
 
     </div>
 
 </div>
 
 
-<!-- ==================== SPONSORZY ==================== -->
+<!-- SPONSORZY -->
 
 <div id="sponsors" class="page">
 
     <div class="top">
-
         <h2>SPONSORZY</h2>
-
-        <button class="back" onclick="showPage('home')">
-            WRÓĆ
-        </button>
-
+        <button class="back" onclick="showPage('home')">WRÓĆ</button>
     </div>
-
 
     <div class="sponsor-box">
         Azmiri Kebab
@@ -492,20 +357,14 @@ button:hover {
 </div>
 
 
-<!-- ==================== ZGODY I KOSY ==================== -->
+<!-- ZGODY I KOSY -->
 
 <div id="relations" class="page">
 
     <div class="top">
-
         <h2>ZGODY I KOSY</h2>
-
-        <button class="back" onclick="showPage('home')">
-            WRÓĆ
-        </button>
-
+        <button class="back" onclick="showPage('home')">WRÓĆ</button>
     </div>
-
 
     <div class="relation-tabs">
 
@@ -522,7 +381,7 @@ button:hover {
 
     <!-- ZGODY -->
 
-    <div id="zgody" class="relation-list">
+    <div id="zgody">
 
         <div class="relation">
             FC GWIAZDY
@@ -537,7 +396,7 @@ button:hover {
 
     <!-- KOSY -->
 
-    <div id="kosy" class="relation-list" style="display:none;">
+    <div id="kosy" style="display:none;">
 
         <div class="relation">
             POŁAMANI FC
@@ -547,8 +406,6 @@ button:hover {
 
 </div>
 
-
-<!-- ==================== JAVASCRIPT ==================== -->
 
 <script>
 
@@ -561,15 +418,10 @@ function showPage(page) {
     document.getElementById("relations").style.display = "none";
 
     if (page === "home") {
-
         document.getElementById("home").style.display = "flex";
-
     } else {
-
         document.getElementById(page).style.display = "block";
-
     }
-
 }
 
 
@@ -579,7 +431,6 @@ function showMatches(type) {
     document.getElementById("liga").style.display = "none";
 
     document.getElementById(type).style.display = "block";
-
 }
 
 
@@ -589,10 +440,9 @@ function showRelations(type) {
     document.getElementById("kosy").style.display = "none";
 
     document.getElementById(type).style.display = "block";
-
 }
 
 </script>
 
 </body>
-        </html>
+    </html>
