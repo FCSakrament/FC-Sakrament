@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FC SAKRAMENT | Grudziądz</title>
+
+    <title>FC SAKRAMENT</title>
 
     <style>
         * {
@@ -16,230 +17,84 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #ffffff 0%, #ffffff 65%, #ffd400 100%);
             color: #111;
-}
-            color: white;
+            min-height: 100vh;
         }
 
         header {
-            background: #fff;
-            color: #111;
+            background: #ffffff;
+            border-bottom: 5px solid #ffd400;
             padding: 20px;
             text-align: center;
-            border-bottom: 6px solid #f5c400;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         header h1 {
-            font-size: 36px;
-            letter-spacing: 3px;
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
         header p {
             margin-top: 5px;
+            font-weight: bold;
             color: #555;
         }
 
         nav {
-            background: #111;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #f5c400;
-        }
-
-        .hero {
-            min-height: 450px;
+            margin-top: 18px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #111 50%, #f5c400 50%);
-        }
-
-        .hero h2 {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 22px;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 28px;
-            background: #f5c400;
-            color: #111;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-        }
-
-        section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
-
-        .cards {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
-        .card {
-            background: #222;
-            border: 2px solid #f5c400;
-            border-radius: 12px;
-            padding: 25px;
-            width: 300px;
-            text-align: center;
+        nav button {
+            background: #111;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .card h3 {
-            color: #f5c400;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #fff;
+        nav button:hover {
+            background: #ffd400;
             color: #111;
+        }
+
+        .page {
+            display: none;
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
             text-align: center;
-            padding: 25px;
-            border-top: 6px solid #f5c400;
+            padding: 55px 20px;
         }
 
-        @media (max-width: 600px) {
-            .hero h2 {
-                font-size: 40px;
-            }
-
-            nav a {
-                display: block;
-                margin: 10px;
-            }
+        .hero .crest {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 20px;
         }
-    </style>
-</head>
 
-<body>
+        .hero h2 {
+            font-size: 42px;
+            font-weight: 900;
+        }
 
-<header>
-    <h1>FC SAKRAMENT</h1>
-    <p>Grudziądz • Od 2025 roku</p>
-</header>
-
-<nav>
-    <a href="#aktualnosci">Aktualności</a>
-    <a href="#mecze">Mecze</a>
-    <a href="#druzyna">Drużyna</a>
-    <a href="#kontakt">Kontakt</a>
-</nav>
-
-<div class="hero">
-    <div>
-        <h2>FC SAKRAMENT</h2>
-        <p>W mieście tylko FCS</p>
-        <a class="button" href="#druzyna">POZNAJ DRUŻYNĘ</a>
-    </div>
-</div>
-
-<section id="aktualnosci">
-    <h2>AKTUALNOŚCI</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>FC SAKRAMENT</h3>
-            <p>Oficjalna strona naszego klubu.</p>
-        </div>
-
-        <div class="card">
-            <h3>GRUDZIĄDZKA LIGA ORLIKOWA</h3>
-            <p>Walczymy o kolejne zwycięstwa!</p>
-        </div>
-
-        <div class="card">
-            <h3>SEZON 2026</h3>
-            <p>Razem po kolejne sukcesy.</p>
-        </div>
-    </div>
-</section>
-
-<section id="mecze">
-    <h2>MECZE</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>FC SAKRAMENT</h3>
-            <p>VS</p>
-            <p>NASTĘPNY MECZ</p>
-        </div>
-
-        <div class="card">
-            <h3>OSTATNI WYNIK</h3>
-            <p>FC SAKRAMENT 13 : 3 CARTEL</p>
-        </div>
-    </div>
-</section>
-
-<section id="druzyna">
-    <h2>NASZA DRUŻYNA</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>BRAMKARZE</h3>
-            <p>Leon Mastalerek</p>
-            <p>Piotr Piłat</p>
-        </div>
-
-        <div class="card">
-            <h3>OBROŃCY</h3>
-            <p>Antek Jakubowski</p>
-            <p>Dominik Czajka</p>
-            <p>Przemysław Zbyszewski</p>
-            <p>Oskar Pudlewski</p>
-        </div>
-
-        <div class="card">
-            <h3>POMOCNICY I NAPASTNICY</h3>
-            <p>Adrian Golba</p>
-            <p>Oliwier Szydzik</p>
-            <p>Łukasz Pchełka</p>
-            <p>Adam Czajka</p>
-        </div>
-    </div>
-</section>
-
-<section id="kontakt">
-    <h2>KONTAKT</h2>
-    <div class="card" style="margin:auto;">
-        <h3>FC SAKRAMENT</h3>
-        <p>Grudziądz</p>
-        <p>Instagram: @fc_sakrament_official</p>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 FC SAKRAMENT • Grudziądz</p>
-    <p>W MIEŚCIE TYLKO FCS ⚽</p>
-</footer>
-
-</body>
-  </html>
+        .yellow {
+            color: #d9ae00;
+        }
