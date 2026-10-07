@@ -145,18 +145,33 @@ button:hover {
     text-align: center;
 }
 
-/* ZGODY I KOSY */
+/* MEDIA */
 
-.relation-tabs {
-    margin-bottom: 25px;
+.media-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
 }
 
-.relation {
+.media-link {
+    display: block;
     background: white;
-    padding: 18px 20px;
-    margin: 10px 0;
-    border-radius: 12px;
+    color: #111;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 22px;
     font-weight: bold;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.media-link:hover {
+    transform: scale(1.03);
+    background: #111;
+    color: white;
 }
 
 /* TELEFON */
@@ -202,8 +217,8 @@ button:hover {
                 SPONSORZY
             </button>
 
-            <button onclick="showPage('relations')">
-                ZGODY I KOSY
+            <button onclick="showPage('media')">
+                MEDIA
             </button>
 
         </div>
@@ -271,40 +286,13 @@ button:hover {
 
     <div id="sparingi">
 
-        <div class="match">
-            <span>FC ORŁY</span>
-            <span>7 - 8</span>
-        </div>
-
-        <div class="match">
-            <span>POŁAMANI FC</span>
-            <span>9 - 11</span>
-        </div>
-
-        <div class="match">
-            <span>FC GRUDZIĄDZKIE BYKI</span>
-            <span>10 - 8</span>
-        </div>
-
-        <div class="match">
-            <span>POŁAMANI FC</span>
-            <span>7 - 12</span>
-        </div>
-
-        <div class="match">
-            <span>FC SINGLE</span>
-            <span>13 - 5</span>
-        </div>
-
-        <div class="match">
-            <span>BECZKOPOL FC</span>
-            <span>36 - 4</span>
-        </div>
-
-        <div class="match">
-            <span>FC BROSKI</span>
-            <span>6 - 8</span>
-        </div>
+        <div class="match"><span>FC ORŁY</span><span>7 - 8</span></div>
+        <div class="match"><span>POŁAMANI FC</span><span>9 - 11</span></div>
+        <div class="match"><span>FC GRUDZIĄDZKIE BYKI</span><span>10 - 8</span></div>
+        <div class="match"><span>POŁAMANI FC</span><span>7 - 12</span></div>
+        <div class="match"><span>FC SINGLE</span><span>13 - 5</span></div>
+        <div class="match"><span>BECZKOPOL FC</span><span>36 - 4</span></div>
+        <div class="match"><span>FC BROSKI</span><span>6 - 8</span></div>
 
     </div>
 
@@ -357,50 +345,30 @@ button:hover {
 </div>
 
 
-<!-- ZGODY I KOSY -->
+<!-- MEDIA -->
 
-<div id="relations" class="page">
+<div id="media" class="page">
 
     <div class="top">
-        <h2>ZGODY I KOSY</h2>
+        <h2>MEDIA</h2>
         <button class="back" onclick="showPage('home')">WRÓĆ</button>
     </div>
 
-    <div class="relation-tabs">
+    <div class="media-box">
 
-        <button onclick="showRelations('zgody')">
-            ZGODY
-        </button>
+        <a
+            class="media-link"
+            href="https://www.instagram.com/fc_sakrament_official/"
+            target="_blank">
+            📸 INSTAGRAM
+        </a>
 
-        <button onclick="showRelations('kosy')">
-            KOSY
-        </button>
-
-    </div>
-
-
-    <!-- ZGODY -->
-
-    <div id="zgody">
-
-        <div class="relation">
-            FC GWIAZDY
-        </div>
-
-        <div class="relation">
-            KS FORZA
-        </div>
-
-    </div>
-
-
-    <!-- KOSY -->
-
-    <div id="kosy" style="display:none;">
-
-        <div class="relation">
-            POŁAMANI FC
-        </div>
+        <a
+            class="media-link"
+            href="TUTAJ_WKLEJ_LINK_DO_TIKTOKA"
+            target="_blank">
+            🎵 TIKTOK
+        </a>
 
     </div>
 
@@ -415,7 +383,7 @@ function showPage(page) {
     document.getElementById("players").style.display = "none";
     document.getElementById("matches").style.display = "none";
     document.getElementById("sponsors").style.display = "none";
-    document.getElementById("relations").style.display = "none";
+    document.getElementById("media").style.display = "none";
 
     if (page === "home") {
         document.getElementById("home").style.display = "flex";
@@ -433,16 +401,7 @@ function showMatches(type) {
     document.getElementById(type).style.display = "block";
 }
 
-
-function showRelations(type) {
-
-    document.getElementById("zgody").style.display = "none";
-    document.getElementById("kosy").style.display = "none";
-
-    document.getElementById(type).style.display = "block";
-}
-
 </script>
 
 </body>
-    </html>
+        </html>
