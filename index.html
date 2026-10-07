@@ -465,6 +465,7 @@ button:hover {
     .news-card {
         padding: 18px 10px;
     }
+
 }
 
 </style>
@@ -679,7 +680,6 @@ button:hover {
 
         </div>
 
-
         <div class="category">
 
             <h3>OBROŃCY</h3>
@@ -706,7 +706,6 @@ button:hover {
 
         </div>
 
-
         <div class="category">
 
             <h3>POMOCNICY</h3>
@@ -724,7 +723,6 @@ button:hover {
             </div>
 
         </div>
-
 
         <div class="category">
 
@@ -783,7 +781,6 @@ button:hover {
 
             </div>
 
-
             <div class="stats-title">
                 🏆 LIGA
             </div>
@@ -802,7 +799,6 @@ button:hover {
 
             </div>
 
-
             <div class="stats-title">
                 📊 ŁĄCZNIE
             </div>
@@ -820,7 +816,6 @@ button:hover {
                 </div>
 
             </div>
-
 
             <button
                 class="profile-back"
@@ -855,7 +850,6 @@ button:hover {
 
     </div>
 
-
     <div class="match-tabs">
 
         <button onclick="showMatches('sparingi')">
@@ -869,9 +863,7 @@ button:hover {
     </div>
 
 
-    <!-- =========================
-         SPARINGI
-    ========================= -->
+    <!-- SPARINGI -->
 
     <div id="sparingi">
 
@@ -913,9 +905,7 @@ button:hover {
     </div>
 
 
-    <!-- =========================
-         LIGA
-    ========================= -->
+    <!-- LIGA -->
 
     <div id="liga" style="display:none;">
 
@@ -1000,4 +990,352 @@ button:hover {
         </div>
 
         <div class="match">
-            <span>
+            <span>KS FORZA</span>
+            <span class="match-score">? - ?</span>
+        </div>
+
+        <div class="match">
+            <span>FC FENIKSY</span>
+            <span class="match-score">11 - 4</span>
+        </div>
+
+        <div class="match">
+            <span>FC DAGESTAN</span>
+            <span class="match-score">20 - 0 (WALKOWER)</span>
+        </div>
+
+        <div class="match">
+            <span>FC CARTEL</span>
+            <span class="match-score">? - ?</span>
+        </div>
+
+        <div class="match">
+            <span>FC GRUDZIADZKIE BYKI</span>
+            <span class="match-score">? - ?</span>
+        </div>
+
+        <div class="match">
+            <span>FC GWIAZDY</span>
+            <span class="match-score">? - ?</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SPONSORZY
+===================================================== -->
+
+<div id="sponsors" class="page">
+
+    <div class="top">
+
+        <h2>SPONSORZY</h2>
+
+        <button
+            class="back"
+            onclick="showPage('home')"
+        >
+            WRÓĆ
+        </button>
+
+    </div>
+
+    <div class="sponsor-box">
+        Azmiri Kebab
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MEDIA
+===================================================== -->
+
+<div id="media" class="page">
+
+    <div class="top">
+
+        <h2>MEDIA</h2>
+
+        <button
+            class="back"
+            onclick="showPage('home')"
+        >
+            WRÓĆ
+        </button>
+
+    </div>
+
+    <div class="media-box">
+
+        <a
+            href="https://www.instagram.com/fc_sakrament_official/"
+            target="_blank"
+        >
+            📸 INSTAGRAM
+        </a>
+
+        <a
+            href="https://www.tiktok.com/"
+            target="_blank"
+        >
+            🎵 TIKTOK
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   ZAWODNICY
+========================= */
+
+const players = {
+
+    rzymski: {
+        number: 1,
+        name: "Dominik Rzymski",
+        position: "Bramkarz",
+        friendlyGoals: 0,
+        leagueGoals: 0,
+        leagueAssists: 0
+    },
+
+    jakubowski: {
+        number: 3,
+        name: "Antek Jakubowski",
+        position: "Obrońca",
+        friendlyGoals: 8,
+        leagueGoals: 4,
+        leagueAssists: 4
+    },
+
+    czajka: {
+        number: 4,
+        name: "Dominik Czajka",
+        position: "Obrońca",
+        friendlyGoals: 8,
+        leagueGoals: 16,
+        leagueAssists: 8
+    },
+
+    sucharzewski: {
+        number: 6,
+        name: "Wojciech Sucharzewski",
+        position: "Obrońca",
+        friendlyGoals: 0,
+        leagueGoals: 1,
+        leagueAssists: 1
+    },
+
+    pietrzycki: {
+        number: 9,
+        name: "Krzysztof Pietrzycki",
+        position: "Napastnik",
+        friendlyGoals: 2,
+        leagueGoals: 18,
+        leagueAssists: 7
+    },
+
+    pilat: {
+        number: 15,
+        name: "Piotr Piłat",
+        position: "Bramkarz",
+        friendlyGoals: 4,
+        leagueGoals: 1,
+        leagueAssists: 3
+    },
+
+    pudlewski: {
+        number: 17,
+        name: "Oskar Pudlewski",
+        position: "Obrońca",
+        friendlyGoals: 18,
+        leagueGoals: 19,
+        leagueAssists: 31
+    },
+
+    golba: {
+        number: 20,
+        name: "Adrian Golba",
+        position: "Pomocnik",
+        friendlyGoals: 10,
+        leagueGoals: 23,
+        leagueAssists: 23
+    },
+
+    szydzik: {
+        number: 25,
+        name: "Oliwier Szydzik",
+        position: "Napastnik",
+        friendlyGoals: 27,
+        leagueGoals: 22,
+        leagueAssists: 15
+    },
+
+    derkowsi: {
+        number: 27,
+        name: "Kryspin Derkowsi",
+        position: "Napastnik",
+        friendlyGoals: 0,
+        leagueGoals: 6,
+        leagueAssists: 0
+    },
+
+    kopcinski: {
+        number: 39,
+        name: "Aleks Kopciński",
+        position: "Obrońca",
+        friendlyGoals: 1,
+        leagueGoals: 4,
+        leagueAssists: 6
+    },
+
+    pchelka: {
+        number: 44,
+        name: "Łukasz Pchełka",
+        position: "Pomocnik",
+        friendlyGoals: 4,
+        leagueGoals: 8,
+        leagueAssists: 8
+    },
+
+    adam: {
+        number: 69,
+        name: "Adam Czajka",
+        position: "Pomocnik",
+        friendlyGoals: 0,
+        leagueGoals: 1,
+        leagueAssists: 0
+    }
+
+};
+
+
+/* =========================
+   ZMIANA STRONY
+========================= */
+
+function showPage(page) {
+
+    document.getElementById("home").style.display = "none";
+
+    document.querySelectorAll(".page").forEach(function(element) {
+        element.style.display = "none";
+    });
+
+    const selectedPage = document.getElementById(page);
+
+    if (selectedPage) {
+        selectedPage.style.display = "block";
+    }
+
+    if (page === "players") {
+        hideProfile();
+    }
+
+    window.scrollTo(0, 0);
+}
+
+
+/* =========================
+   MECZE
+========================= */
+
+function showMatches(type) {
+
+    document.getElementById("sparingi").style.display = "none";
+    document.getElementById("liga").style.display = "none";
+
+    document.getElementById(type).style.display = "block";
+
+}
+
+
+/* =========================
+   PROFIL ZAWODNIKA
+========================= */
+
+function showProfile(id) {
+
+    const player = players[id];
+
+    if (!player) {
+        return;
+    }
+
+    document.getElementById("playerList").style.display = "none";
+
+    document.getElementById("playerProfile").style.display = "block";
+
+    document.getElementById("profileNumber").textContent =
+        "#" + player.number;
+
+    document.getElementById("profileName").textContent =
+        player.name;
+
+    document.getElementById("profilePosition").textContent =
+        player.position;
+
+    document.getElementById("friendlyGoals").textContent =
+        player.friendlyGoals;
+
+    document.getElementById("leagueGoals").textContent =
+        player.leagueGoals;
+
+    document.getElementById("leagueAssists").textContent =
+        player.leagueAssists;
+
+    document.getElementById("totalGoals").textContent =
+        player.friendlyGoals + player.leagueGoals;
+
+    document.getElementById("totalAssists").textContent =
+        player.leagueAssists;
+
+    window.scrollTo(0, 0);
+}
+
+
+/* =========================
+   POWRÓT DO LISTY
+========================= */
+
+function hideProfile() {
+
+    const profile = document.getElementById("playerProfile");
+    const list = document.getElementById("playerList");
+
+    if (profile) {
+        profile.style.display = "none";
+    }
+
+    if (list) {
+        list.style.display = "block";
+    }
+}
+
+
+/* =========================
+   START STRONY
+========================= */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    document.getElementById("home").style.display = "flex";
+
+    document.querySelectorAll(".page").forEach(function(element) {
+        element.style.display = "none";
+    });
+
+});
+
+</script>
+
+</body>
+</html>
