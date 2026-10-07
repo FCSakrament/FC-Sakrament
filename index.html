@@ -35,6 +35,8 @@ body {
     padding: 45px 60px;
     border-radius: 25px;
     box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    max-width: 650px;
+    width: 95%;
 }
 
 .home h1 {
@@ -67,6 +69,57 @@ button:hover {
     transform: scale(1.05);
     background: #111;
     color: white;
+}
+
+/* TABELA LIGOWA */
+
+.table-title {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.league-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.league-table th {
+    background: #111;
+    color: white;
+    padding: 10px 8px;
+    font-size: 14px;
+}
+
+.league-table td {
+    padding: 9px 8px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.league-table tr:last-child td {
+    border-bottom: none;
+}
+
+.league-table .sakrament {
+    background: #ffd900;
+}
+
+.league-table .position {
+    width: 45px;
+    text-align: center;
+}
+
+.league-table .points {
+    width: 65px;
+    text-align: center;
 }
 
 /* PODSTRONY */
@@ -108,10 +161,104 @@ button:hover {
 
 .player {
     background: white;
-    padding: 12px 18px;
+    padding: 15px 18px;
     margin: 7px 0;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.player:hover {
+    transform: translateX(5px);
+    background: #ffd900;
+}
+
+/* PROFIL ZAWODNIKA */
+
+.player-profile {
+    display: none;
+}
+
+.profile-card {
+    max-width: 650px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.profile-number {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+    background: #ffd900;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.profile-position {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.stats-title {
+    font-size: 22px;
+    font-weight: 900;
+    margin: 20px 0 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.stat-box {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 18px 10px;
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.stat-box span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.stat-league {
+    background: #ffd900;
+}
+
+.stat-total {
+    background: #111;
+    color: white;
+}
+
+.profile-back {
+    margin-top: 25px;
+    background: #111;
+    color: white;
 }
 
 /* MECZE */
@@ -178,8 +325,8 @@ button:hover {
 @media (max-width: 600px) {
 
     .home-box {
-        padding: 35px 20px;
-        width: 90%;
+        padding: 35px 15px;
+        width: 95%;
     }
 
     .home h1 {
@@ -188,6 +335,20 @@ button:hover {
 
     button {
         width: 100%;
+    }
+
+    .league-table th,
+    .league-table td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-name {
+        font-size: 26px;
     }
 }
 </style>
@@ -222,6 +383,100 @@ button:hover {
 
         </div>
 
+        <!-- TABELA -->
+
+        <div class="table-title">
+            TABELA LIGOWA
+        </div>
+
+        <table class="league-table">
+
+            <thead>
+                <tr>
+                    <th class="position">#</th>
+                    <th>DRUŻYNA</th>
+                    <th class="points">PKT</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="position">1</td>
+                    <td>FC Single</td>
+                    <td class="points">55</td>
+                </tr>
+
+                <tr>
+                    <td class="position">2</td>
+                    <td>FC Grudziądzkie Byki</td>
+                    <td class="points">39</td>
+                </tr>
+
+                <tr>
+                    <td class="position">3</td>
+                    <td>FC Feniksy</td>
+                    <td class="points">36</td>
+                </tr>
+
+                <tr class="sakrament">
+                    <td class="position">4</td>
+                    <td>FC Sakrament</td>
+                    <td class="points">34</td>
+                </tr>
+
+                <tr>
+                    <td class="position">5</td>
+                    <td>KS FORZA</td>
+                    <td class="points">33</td>
+                </tr>
+
+                <tr>
+                    <td class="position">6</td>
+                    <td>FC Niedzielni Wojownicy</td>
+                    <td class="points">33</td>
+                </tr>
+
+                <tr>
+                    <td class="position">7</td>
+                    <td>Połamani FC</td>
+                    <td class="points">31</td>
+                </tr>
+
+                <tr>
+                    <td class="position">8</td>
+                    <td>FC Gwiazdy</td>
+                    <td class="points">30</td>
+                </tr>
+
+                <tr>
+                    <td class="position">9</td>
+                    <td>FC Cartel</td>
+                    <td class="points">12</td>
+                </tr>
+
+                <tr>
+                    <td class="position">10</td>
+                    <td>OKS Strzemyk</td>
+                    <td class="points">-9</td>
+                </tr>
+
+                <tr>
+                    <td class="position">11</td>
+                    <td>KS Gruzy</td>
+                    <td class="points">-11</td>
+                </tr>
+
+                <tr>
+                    <td class="position">12</td>
+                    <td>FC Dagestan</td>
+                    <td class="points">-45</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
     </div>
 </div>
 
@@ -235,33 +490,163 @@ button:hover {
         <button class="back" onclick="showPage('home')">WRÓĆ</button>
     </div>
 
-    <div class="category">
-        <h3>BRAMKARZE</h3>
-        <div class="player">#1 Dominik Rzymski</div>
-        <div class="player">#15 Piotr Piłat</div>
+    <div id="playerList">
+
+        <div class="category">
+            <h3>BRAMKARZE</h3>
+
+            <div class="player" onclick="showProfile('rzymski')">
+                #1 Dominik Rzymski
+            </div>
+
+            <div class="player" onclick="showProfile('pilat')">
+                #15 Piotr Piłat
+            </div>
+        </div>
+
+
+        <div class="category">
+            <h3>OBROŃCY</h3>
+
+            <div class="player" onclick="showProfile('jakubowski')">
+                #3 Antek Jakubowski
+            </div>
+
+            <div class="player" onclick="showProfile('czajka')">
+                #4 Dominik Czajka
+            </div>
+
+            <div class="player" onclick="showProfile('sucharzewski')">
+                #6 Wojciech Sucharzewski
+            </div>
+
+            <div class="player" onclick="showProfile('pudlewski')">
+                #17 Oskar Pudlewski
+            </div>
+
+            <div class="player" onclick="showProfile('kopcinski')">
+                #39 Aleks Kopciński
+            </div>
+        </div>
+
+
+        <div class="category">
+            <h3>POMOCNICY</h3>
+
+            <div class="player" onclick="showProfile('golba')">
+                #20 Adrian Golba
+            </div>
+
+            <div class="player" onclick="showProfile('pchełka')">
+                #44 Łukasz Pchełka
+            </div>
+
+            <div class="player" onclick="showProfile('adam')">
+                #69 Adam Czajka
+            </div>
+        </div>
+
+
+        <div class="category">
+            <h3>NAPASTNICY</h3>
+
+            <div class="player" onclick="showProfile('pietrzycki')">
+                #9 Krzysztof Pietrzycki
+            </div>
+
+            <div class="player" onclick="showProfile('szydzik')">
+                #25 Oliwier Szydzik
+            </div>
+
+            <div class="player" onclick="showProfile('derkowski')">
+                #27 Kryspin Derkowsi
+            </div>
+        </div>
+
     </div>
 
-    <div class="category">
-        <h3>OBROŃCY</h3>
-        <div class="player">#3 Antek Jakubowski</div>
-        <div class="player">#4 Dominik Czajka</div>
-        <div class="player">#6 Wojciech Sucharzewski</div>
-        <div class="player">#17 Oskar Pudlewski</div>
-        <div class="player">#39 Aleks Kopciński</div>
-    </div>
 
-    <div class="category">
-        <h3>POMOCNICY</h3>
-        <div class="player">#20 Adrian Golba</div>
-        <div class="player">#44 Łukasz Pchełka</div>
-        <div class="player">#69 Adam Czajka</div>
-    </div>
+    <!-- PROFILE -->
 
-    <div class="category">
-        <h3>NAPASTNICY</h3>
-        <div class="player">#9 Krzysztof Pietrzycki</div>
-        <div class="player">#25 Oliwier Szydzik</div>
-        <div class="player">#27 Kryspin Derkowsi</div>
+    <div id="playerProfile" class="player-profile">
+
+        <div class="profile-card">
+
+            <div id="profileNumber" class="profile-number">
+                #17
+            </div>
+
+            <div id="profileName" class="profile-name">
+                Oskar Pudlewski
+            </div>
+
+            <div id="profilePosition" class="profile-position">
+                Obrońca
+            </div>
+
+
+            <div class="stats-title">
+                ⚽ SPARINGI
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-box">
+                    <strong id="friendlyGoals">0</strong>
+                    <span>GOLE</span>
+                </div>
+
+                <div class="stat-box">
+                    <strong>-</strong>
+                    <span>ASYSTY</span>
+                </div>
+
+            </div>
+
+
+            <div class="stats-title">
+                🏆 LIGA
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-box stat-league">
+                    <strong id="leagueGoals">0</strong>
+                    <span>GOLE</span>
+                </div>
+
+                <div class="stat-box stat-league">
+                    <strong id="leagueAssists">0</strong>
+                    <span>ASYSTY</span>
+                </div>
+
+            </div>
+
+
+            <div class="stats-title">
+                📊 ŁĄCZNIE
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-box stat-total">
+                    <strong id="totalGoals">0</strong>
+                    <span>GOLE</span>
+                </div>
+
+                <div class="stat-box stat-total">
+                    <strong id="totalAssists">0</strong>
+                    <span>ASYSTY</span>
+                </div>
+
+            </div>
+
+            <button class="profile-back" onclick="hideProfile()">
+                WRÓĆ DO ZAWODNIKÓW
+            </button>
+
+        </div>
+
     </div>
 
 </div>
@@ -281,49 +666,17 @@ button:hover {
         <button onclick="showMatches('liga')">LIGA</button>
     </div>
 
-    <!-- SPARINGI -->
-
     <div id="sparingi">
 
-        <div class="match">
-            <span>FC ORŁY</span>
-            <span>7 - 8</span>
-        </div>
-
-        <div class="match">
-            <span>POŁAMANI FC</span>
-            <span>9 - 11</span>
-        </div>
-
-        <div class="match">
-            <span>FC GRUDZIĄDZKIE BYKI</span>
-            <span>10 - 8</span>
-        </div>
-
-        <div class="match">
-            <span>POŁAMANI FC</span>
-            <span>7 - 12</span>
-        </div>
-
-        <div class="match">
-            <span>FC SINGLE</span>
-            <span>13 - 5</span>
-        </div>
-
-        <div class="match">
-            <span>BECZKOPOL FC</span>
-            <span>36 - 4</span>
-        </div>
-
-        <div class="match">
-            <span>FC BROSKI</span>
-            <span>6 - 8</span>
-        </div>
+        <div class="match"><span>FC ORŁY</span><span>7 - 8</span></div>
+        <div class="match"><span>POŁAMANI FC</span><span>9 - 11</span></div>
+        <div class="match"><span>FC GRUDZIĄDZKIE BYKI</span><span>10 - 8</span></div>
+        <div class="match"><span>POŁAMANI FC</span><span>7 - 12</span></div>
+        <div class="match"><span>FC SINGLE</span><span>13 - 5</span></div>
+        <div class="match"><span>BECZKOPOL FC</span><span>36 - 4</span></div>
+        <div class="match"><span>FC BROSKI</span><span>6 - 8</span></div>
 
     </div>
-
-
-    <!-- LIGA -->
 
     <div id="liga" style="display:none;">
 
@@ -397,6 +750,128 @@ button:hover {
 
 <script>
 
+const players = {
+
+    rzymski: {
+        number: 1,
+        name: "Dominik Rzymski",
+        position: "Bramkarz",
+        friendlyGoals: 0,
+        leagueGoals: 0,
+        leagueAssists: 0
+    },
+
+    jakubowski: {
+        number: 3,
+        name: "Antek Jakubowski",
+        position: "Obrońca",
+        friendlyGoals: 8,
+        leagueGoals: 4,
+        leagueAssists: 4
+    },
+
+    czajka: {
+        number: 4,
+        name: "Dominik Czajka",
+        position: "Obrońca",
+        friendlyGoals: 8,
+        leagueGoals: 16,
+        leagueAssists: 8
+    },
+
+    sucharzewski: {
+        number: 6,
+        name: "Wojciech Sucharzewski",
+        position: "Obrońca",
+        friendlyGoals: 0,
+        leagueGoals: 1,
+        leagueAssists: 1
+    },
+
+    pietrzycki: {
+        number: 9,
+        name: "Krzysztof Pietrzycki",
+        position: "Napastnik",
+        friendlyGoals: 2,
+        leagueGoals: 18,
+        leagueAssists: 7
+    },
+
+    pilat: {
+        number: 15,
+        name: "Piotr Piłat",
+        position: "Bramkarz",
+        friendlyGoals: 4,
+        leagueGoals: 1,
+        leagueAssists: 3
+    },
+
+    pudlewski: {
+        number: 17,
+        name: "Oskar Pudlewski",
+        position: "Obrońca",
+        friendlyGoals: 18,
+        leagueGoals: 19,
+        leagueAssists: 31
+    },
+
+    golba: {
+        number: 20,
+        name: "Adrian Golba",
+        position: "Pomocnik",
+        friendlyGoals: 10,
+        leagueGoals: 23,
+        leagueAssists: 23
+    },
+
+    szydzik: {
+        number: 25,
+        name: "Oliwier Szydzik",
+        position: "Napastnik",
+        friendlyGoals: 27,
+        leagueGoals: 22,
+        leagueAssists: 15
+    },
+
+    derkowski: {
+        number: 27,
+        name: "Kryspin Derkowsi",
+        position: "Napastnik",
+        friendlyGoals: 0,
+        leagueGoals: 6,
+        leagueAssists: 0
+    },
+
+    kopcinski: {
+        number: 39,
+        name: "Aleks Kopciński",
+        position: "Obrońca",
+        friendlyGoals: 1,
+        leagueGoals: 4,
+        leagueAssists: 6
+    },
+
+    pchełka: {
+        number: 44,
+        name: "Łukasz Pchełka",
+        position: "Pomocnik",
+        friendlyGoals: 4,
+        leagueGoals: 8,
+        leagueAssists: 8
+    },
+
+    adam: {
+        number: 69,
+        name: "Adam Czajka",
+        position: "Pomocnik",
+        friendlyGoals: 0,
+        leagueGoals: 1,
+        leagueAssists: 0
+    }
+
+};
+
+
 function showPage(page) {
 
     document.getElementById("home").style.display = "none";
@@ -421,7 +896,24 @@ function showMatches(type) {
     document.getElementById(type).style.display = "block";
 }
 
-</script>
 
-</body>
-</html>
+function showProfile(id) {
+
+    const player = players[id];
+
+    document.getElementById("playerList").style.display = "none";
+    document.getElementById("playerProfile").style.display = "block";
+
+    document.getElementById("profileNumber").textContent =
+        "#" + player.number;
+
+    document.getElementById("profileName").textContent =
+        player.name;
+
+    document.getElementById("profilePosition").textContent =
+        player.position;
+
+    document.getElementById("friendlyGoals").textContent =
+        player.friendlyGoals;
+
+    document.getElementById("leagueGoals")
